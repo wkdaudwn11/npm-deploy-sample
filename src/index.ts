@@ -1,7 +1,1 @@
-function test(): void {
-    console.log("test");
-}
-
-module.exports = {
-    test,
-};
+export * as commons from "./commons";
