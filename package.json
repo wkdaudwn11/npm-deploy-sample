@@ -1,23 +1,51 @@
 {
-  "name": "myungjoo-npm-deploy-sample",
-  "version": "1.1.0",
-  "description": "npm deploy sample project",
-  "main": "index.js",
-  "bin": {
-    "log-run": "bin/cli.js"
-  },
-  "files": [
-    "cli"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "sample"
-  ],
-  "author": "myungjoo",
-  "license": "ISC",
-  "dependencies": {
-    "commander": "7.2.0"
-  }
+    "name": "myungjoo-npm-deploy-sample",
+    "version": "1.4.0",
+    "description": "npm deploy sample project",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wkdaudwn11/npm-deploy-sample.git"
+    },
+    "keywords": [],
+    "author": {
+        "name": "wkdaudwn11",
+        "email": "wkdaudwn1028@gmail.com",
+        "url": "https://github.com/wkdaudwn11"
+    },
+    "scripts": {
+        "prettier": "prettier --write \"src/**/*.{ts,tsx,js}\"",
+        "tslint": "tslint --project tsconfig.json --fix",
+        "prestart": "yarn tslint",
+        "build": "tsc",
+        "pre-publish": "yarn prettier && yarn tslint && yarn build",
+        "publish": "yarn pre-publish && npm publish --access public"
+    },
+    "dependencies": {
+        "eslint-config-airbnb": "18.2.1"
+    },
+    "devDependencies": {
+        "babel-eslint": "10.1.0",
+        "eslint": "^7.2.0",
+        "eslint-config-prettier": "8.1.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "3.3.1",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^1.7.0",
+        "prettier": "2.2.1"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT"
+        }
+    ]
 }
