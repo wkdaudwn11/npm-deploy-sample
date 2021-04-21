@@ -1,6 +1,6 @@
 {
   "name": "myungjoo-npm-deploy-sample",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "description": "npm deploy sample project",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,13 +24,20 @@
     "prettier": "prettier --write \"src/**/*.{ts,tsx,js}\"",
     "tslint": "tslint --project tsconfig.json --fix",
     "build": "yarn prettier && yarn tslint && tsc",
-    "publish": "yarn build && npm publish"
+    "publish": "rm -rf dist && yarn build && npm publish",
+    "test": "yarn build && node ./dist/index.js --exec babel-node"
   },
   "dependencies": {
     "eslint-config-airbnb": "18.2.1"
   },
   "devDependencies": {
+    "@babel/cli": "7.13.16",
+    "@babel/core": "7.13.16",
+    "@babel/node": "7.13.13",
+    "@babel/polyfill": "7.12.1",
+    "@babel/preset-env": "7.13.15",
     "babel-eslint": "10.1.0",
+    "babel-loader": "8.2.2",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "^2.22.1",

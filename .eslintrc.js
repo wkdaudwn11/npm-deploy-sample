@@ -19,6 +19,8 @@ module.exports = {
     "no-unused-vars": 1,
     "react/no-array-index-key": 0,
     "no-alert": 0,
+    "import/no-unresolved": 0,
+    "prettier/prettier": 0,
   },
   parser: "babel-eslint",
 };
